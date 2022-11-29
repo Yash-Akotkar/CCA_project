@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/form_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Book your table</title>
+</head>
+
+<script>
+
+function validateForm(){
+    var fn=document.forms["regform"]["name"].value;
+    var phone=document.forms["regform"]["phone"].value;
+
+    if(fn==null || fn==""){
+        alert("Name field cannot be empty");
+        return false;
+    }
+    
+    if(phone==null || phone==""){
+        alert("Please enter your phone number");
+        return false;
+    }
+    else if(phone.length!=10){
+        alert("Please enter valide number");
+        return false;
+    }
+
+    else{
+        alert("Booking Confirmed check your mobile for SMS!!!")
+        return true;
+
+    printf(fn);
+    printf(phone);
+    }
+    
+}
+</script>
+
+
+
+
+<body>
+    <section class="banner">
+        <h2>BOOK YOUR TABLE NOW</h2>
+        <div class="card-container">
+            <div class="card-img">
+                
+            </div>
+
+            <div class="card-content">
+                <h3>Book table</h3>
+                <form action=" " name="regform" onsubmit="return validateForm()" >
+                    <div class="form-row">
+                        <input type="date" name="date" id="date" required>
+
+                        <input type="time" name="hours" id="hours" required>
+                        
+                    </div>
+
+                    <div class="form-row">
+                        <input type="text" id="name" name="name"placeholder="Enter your name" required>
+                        
+                        <input type="number" id="phone" name="phone" placeholder="Phone number" required>
+                        
+                    </div>
+
+                    <div class="form-row">
+                        <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+                    </div>
+
+                    <div class="form-row">
+                        <input type="number" placeholder="How many persons?" min="1" required>
+                        <input type="submit" value="BOOK TABLE">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
